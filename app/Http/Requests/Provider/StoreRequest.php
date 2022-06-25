@@ -24,40 +24,40 @@ class StoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:providers',
-            'ruc_numbre'=>'required|string|max:14|min:14|unique:providers',
-            'address' => 'nullable|string|max:255',
-            'phone' => 'required|string|max:8|min:8|unique:providers',
+            'name'=>'required|string|max:255',
+            'email'=>'required|email|string|max:255|unique:providers',
+            'ruc_number'=>'required|string|max:14|min:14|unique:providers',
+            'address'=>'nullable|string|max:255',
+            'phone'=>'required|string|max:8|min:8|unique:providers',
         ];
     }
     public function messages()
     {
-        return [
-            'name.required' => 'El nombre es requerido',
-            'name.string' => 'El nombre debe ser una cadena de texto',
-            'name.max' => 'El nombre no puede tener más de 255 caracteres',
+        return[
+            'name.required'=>'Este campo es requerido.',
+            'name.string'=>'El valor no es correcto.',
+            'name.max'=>'Solo se permiten 255 caracteres.',
+            
+            'email.required'=>'Este campo es requerido.',
+            'email.email'=>'No es un correo electrónico.',
+            'email.string'=>'El valor no es correcto.',
+            'email.max'=>'Solo se permiten 255 caracteres.',
+            'email.unique'=>'Ya se encuentra registrado.',
 
-            'email.required' => 'El email es requerido',
-            'email.string' => 'El email debe ser una cadena de texto',
-            'email.email' => 'El email debe ser un email válido',
-            'email.max' => 'El email no puede tener más de 255 caracteres',
-            'email.unique' => 'El email ya existe',
+            'ruc_number.required'=>'Este campo es requerido.',
+            'ruc_number.string'=>'El valor no es correcto.',
+            'ruc_number.max'=>'Solo se permiten 11 caracteres.',
+            'ruc_number.min'=>'Se requiere de 11 caracteres.',
+            'ruc_number.unique'=>'Ya se encuentra registrado.',
 
-            'ruc_numbre.required' => 'El ruc es requerido',
-            'ruc_numbre.string' => 'El ruc no es correcto',
-            'ruc_numbre.max' => 'El ruc no puede tener más de 14 caracteres',
-            'ruc_numbre.min' => 'El ruc no puede tener menos de 14 caracteres',
-            'ruc_numbre.unique' => 'El ruc ya existe',
+            'address.max'=>'Solo se permiten 255 caracteres.',
+            'address.string'=>'El valor no es correcto.',
 
-            'address.string' => 'La dirección no es correcta',
-            'address.max' => 'La dirección no puede tener más de 255 caracteres',
-
-            'phone.required' => 'El teléfono es requerido',
-            'phone.string' => 'El teléfono no es correcto',
-            'phone.max' => 'El teléfono no puede tener más de 8 caracteres',
-            'phone.min' => 'El teléfono no puede tener menos de 8 caracteres',
-            'phone.unique' => 'El teléfono ya existe',
+            'phone.required'=>'Este campo es requerido.',
+            'phone.string'=>'El valor no es correcto.',
+            'phone.max'=>'Solo se permiten 9 caracteres.',
+            'phone.min'=>'Se requiere de 9 caracteres.',
+            'phone.unique'=>'Ya se encuentra registrado.',
         ];
     }
 }
