@@ -107,7 +107,7 @@
             </div>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="https://www.youtube.com/channel/UCMWSlUcDJS00-5pmicciZ_w">
+            <a class="nav-link" href="#">
                 <i class="fab fa-youtube menu-icon"></i>
                 <span class="menu-title">YouTube</span>
             </a>

@@ -31,8 +31,8 @@
               <div class="brand-logo">
                 <img src="{{asset('melody/images/logo.svg')}}" alt="logo">
               </div>
-              <h4>Texvn Online</h4>
-              <h6 class="font-weight-light">Descripción de la empresa.</h6>
+              <h4>Punto de venta</h4>
+              <h6 class="font-weight-light">Licoreria ABBE</h6>
 
 
               @yield('content')
@@ -41,7 +41,7 @@
             </div>
           </div>
           <div class="col-lg-6 login-half-bg d-flex flex-row">
-            <p class="text-white font-weight-medium text-center flex-grow align-self-end">Copyright &copy; 2020 Todos los derechos reservados <a href="https://www.youtube.com/channel/UCMWSlUcDJS00-5pmicciZ_w">Texvn Online</a></p>
+            <p class="text-white font-weight-medium text-center flex-grow align-self-end">Copyright &copy; 2022 Todos los derechos reservados <a href="#">Ignacio Davila</a></p>
           </div>
         </div>
       </div>

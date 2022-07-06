@@ -24,36 +24,37 @@ class UpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|string|max:50',
-            'imgage' => 'required|dimensions:max_width=100,max_height=200',
-            'lote' => 'required|string|unique:products,lote,'.$this->route('product')->id.'|max:255',
-            'stock' => 'required|integer',
-            'sell_price' => 'required',
-            'category_id' => 'interger|required|exists:categories,id',
-            'provider_id' => 'integer|required|exists:providers,id',
 
+            'name'=>'string|required|unique:products,name,'.$this->route('product')->id.'|max:255',
+            
+            'sell_price'=>'required',
+            'category_id'=>'integer|required|exists:App\Category,id',
+            'provider_id'=>'integer|required|exists:App\Provider,id',
+
+             'code'=>'nullable|string|max:8|min:8',   
         ];
     }
-
     public function messages()
     {
-        return [
-            'name.required' => 'El nombre es requerido',
-            'name.string' => 'El nombre debe ser una cadena de texto',
-            'name.max' => 'El nombre no puede tener más de 50 caracteres',
-            'imgage.required' => 'La imagen es requerida',
-            'imgage.dimensions' => 'La imagen debe tener una altura máxima de 200px y una anchura máxima de 100px',
-            'lote.required' => 'El lote es requerido',
-            'lote.string' => 'El lote debe ser una cadena de texto',
-            'lote.unique' => 'El lote ya existe',
-            'lote.max' => 'El lote no puede tener más de 255 caracteres',
-            'stock.required' => 'El stock es requerido',
-            'stock.integer' => 'El stock debe ser un número entero',
-            'sell_price.required' => 'El precio de venta es requerido',
-            'category_id.required' => 'La categoría es requerida',
-            'category_id.exists' => 'La categoría no existe',
-            'provider_id.required' => 'El proveedor es requerido',
-            'provider_id.exists' => 'El proveedor no existe',
+        return[
+            'name.string'=>'El valor no es correcto.',
+            'name.required'=>'El campo es requerido.',
+            'name.unique'=>'El producto ya está registrado.',
+            'name.max'=>'Solo se permite 255 caracteres.',
+
+            'code.string'=>'El valor no es correcto.',
+            'code.max'=>'Solo se permite 8 dígitos.',
+            'code.min'=>'Se requiere de 8 dígitos.',
+
+            'sell_price.required'=>'El campo es requerido.',
+
+            'category_id.integer'=>'El valor tiene que ser entero.',
+            'category_id.required'=>'El campo es requerido.',
+            'category_id.exists'=>'La categoría no existe.',
+
+            'provider_id.integer'=>'El valor tiene que ser entero.',
+            'provider_id.required'=>'El campo es requerido.',
+            'provider_id.exists'=>'El proveedor no existe.',
         ];
     }
 }

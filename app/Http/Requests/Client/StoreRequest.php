@@ -25,7 +25,7 @@ class StoreRequest extends FormRequest
     {
         return [
             'name' => 'required|string|max:255',
-            'dni' => 'required|string|max:14|unique:clients',
+            'dni' => 'required|string|max:13|unique:clients',
             'ruc' => 'nullable|string|max:14|unique:clients',
             'address' => 'nullable|string|max:255',
             'phone' => 'required|string|max:8|unique:clients',

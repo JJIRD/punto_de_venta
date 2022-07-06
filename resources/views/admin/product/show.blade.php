@@ -138,12 +138,12 @@
                                             {{$product->sell_price}}
                                         </p>
                                         <hr>
-                                        <strong><i class="fas fa-envelope mr-1"></i> Código de barras</strong>
+                                        {{-- <strong><i class="fas fa-envelope mr-1"></i> Código de barras</strong>
                                         <p class="text-muted">
                                             {!!DNS1D::getBarcodeHTML($product->code, 'EAN13'); !!}
                                         </p>
                                         <hr>
-                                        {{--  <strong><i class="fas fa-map-marked-alt mr-1"></i> Categoría</strong>
+                                         <strong><i class="fas fa-map-marked-alt mr-1"></i> Categoría</strong>
                                         <p class="text-muted">
                                             {{$product->category->name}}
                                         </p>
