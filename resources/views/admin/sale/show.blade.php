@@ -54,10 +54,10 @@
                                 <thead>
                                     <tr>
                                         <th>Producto</th>
-                                        <th>Precio Venta (PEN)</th>
-                                        <th>Descuento(PEN)</th>
+                                        <th>Precio Venta (C$)</th>
+                                        <th>Descuento(C$)</th>
                                         <th>Cantidad</th>
-                                        <th>SubTotal(PEN)</th>
+                                        <th>SubTotal(C$)</th>
                                     </tr>
                                 </thead>
                                 <tfoot>
@@ -67,7 +67,7 @@
                                             <p align="right">SUBTOTAL:</p>
                                         </th>
                                         <th>
-                                            <p align="right">s/{{number_format($subtotal,2)}}</p>
+                                            <p align="right">C$ {{number_format($subtotal,2)}}</p>
                                         </th>
                                     </tr>
 
@@ -76,7 +76,7 @@
                                             <p align="right">TOTAL IMPUESTO ({{$sale->tax}}%):</p>
                                         </th>
                                         <th>
-                                            <p align="right">s/{{number_format($subtotal*$sale->tax/100,2)}}</p>
+                                            <p align="right">C$ {{number_format($subtotal*$sale->tax/100,2)}}</p>
                                         </th>
                                     </tr>
                                     <tr>
@@ -84,7 +84,7 @@
                                             <p align="right">TOTAL:</p>
                                         </th>
                                         <th>
-                                            <p align="right">s/{{number_format($sale->total,2)}}</p>
+                                            <p align="right">C$ {{number_format($sale->total,2)}}</p>
                                         </th>
                                     </tr>
 
@@ -93,10 +93,10 @@
                                     @foreach($saleDetails as $saleDetail)
                                     <tr>
                                         <td>{{$saleDetail->product->name}}</td>
-                                        <td>s/ {{$saleDetail->price}}</td>
+                                        <td>C$  {{$saleDetail->price}}</td>
                                         <td>{{$saleDetail->discount}} %</td>
                                         <td>{{$saleDetail->quantity}}</td>
-                                        <td>s/{{number_format($saleDetail->quantity*$saleDetail->price - $saleDetail->quantity*$saleDetail->price*$saleDetail->discount/100,2)}}
+                                        <td>C$ {{number_format($saleDetail->quantity*$saleDetail->price - $saleDetail->quantity*$saleDetail->price*$saleDetail->discount/100,2)}}
                                         </td>
                                     </tr>
                                     @endforeach
@@ -114,6 +114,6 @@
 </div>
 @endsection
 @section('scripts')
-{!! Html::script('melody/js/profile-demo.js') !!}
-{!! Html::script('melody/js/data-table.js') !!}
+{!! Html::script('melody/jC$ profile-demo.js') !!}
+{!! Html::script('melody/jC$ data-table.js') !!}
 @endsection
