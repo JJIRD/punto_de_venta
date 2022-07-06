@@ -79,11 +79,11 @@ class SaleController extends Controller
         foreach ($saleDetails as $saleDetail) {
             $subtotal += $saleDetail->quantity*$saleDetail->price-$saleDetail->quantity* $saleDetail->price*$saleDetail->discount/100;
         }
-        $pdf = PDF::loadView('admin.sale.pdf', compact('sale', 'subtotal', 'saleDetails'));
+        $pdf = Pdf::loadView('admin.sale.pdf', compact('sale', 'subtotal', 'saleDetails'));
         return $pdf->download('Reporte_de_venta_'.$sale->id.'.pdf');
     }
 
-    /*public function print(Sale $sale){
+    public function print(Sale $sale){
         try {
             $subtotal = 0 ;
             $saleDetails = $sale->saleDetails;
@@ -106,7 +106,7 @@ class SaleController extends Controller
         } catch (\Throwable $th) {
             return redirect()->back();
         }
-    }*/
+    }
 
     public function change_status(Sale $sale)
     {
