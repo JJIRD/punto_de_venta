@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     protected $fillable = [
+        'code',
         'name',
-        'lote',
         'stock',
         'image',
         'sell_price',
@@ -17,13 +17,11 @@ class Product extends Model
         'provider_id',
     ];
 
-    public function category()
-    {
+    public function category(){
         return $this->belongsTo(Category::class);
     }
-
-    public function provider()
-    {
+    public function provider(){
         return $this->belongsTo(Provider::class);
     }
+    
 }

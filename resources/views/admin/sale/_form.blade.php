@@ -56,7 +56,7 @@
             <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon3">%</span>
             </div>
-            <input type="number" class="form-control" name="tax" id="tax" aria-describedby="basic-addon3" value="15">
+            <input type="number" class="form-control" name="tax" id="tax" aria-describedby="basic-addon3" value="18">
         </div>
     </div>
     <div class="form-group col-md-3">
@@ -87,10 +87,10 @@
                 <tr>
                     <th>Eliminar</th>
                     <th>Producto</th>
-                    <th>Precio Venta (C$)</th>
+                    <th>Precio Venta (PEN)</th>
                     <th>Descuento</th>
                     <th>Cantidad</th>
-                    <th>SubTotal (C$)</th>
+                    <th>SubTotal (PEN)</th>
                 </tr>
             </thead>
             <tfoot>
@@ -99,15 +99,15 @@
                         <p align="right">TOTAL:</p>
                     </th>
                     <th>
-                        <p align="right"><span id="total">C$  0.00</span> </p>
+                        <p align="right"><span id="total">PEN 0.00</span> </p>
                     </th>
                 </tr>
                 <tr>
                     <th colspan="5">
-                        <p align="right">TOTAL IMPUESTO (15%):</p>
+                        <p align="right">TOTAL IMPUESTO (18%):</p>
                     </th>
                     <th>
-                        <p align="right"><span id="total_impuesto">C$  0.00</span></p>
+                        <p align="right"><span id="total_impuesto">PEN 0.00</span></p>
                     </th>
                 </tr>
                 <tr>
@@ -115,7 +115,7 @@
                         <p align="right">TOTAL PAGAR:</p>
                     </th>
                     <th>
-                        <p align="right"><span align="right" id="total_pagar_html">C$  0.00</span> <input type="hidden"
+                        <p align="right"><span align="right" id="total_pagar_html">PEN 0.00</span> <input type="hidden"
                                 name="total" id="total_pagar"></p>
                     </th>
                 </tr>

@@ -41,7 +41,7 @@
             </div>
             <div class="row mt-5">
               <div class="col-12 mt-xl-2">
-                <p class="text-white font-weight-medium text-center">Copyright © 2021. Todos los derechos reservados <a href="https://www.youtube.com/channel/UCMWSlUcDJS00-5pmicciZ_w">Texvn Online</a></p>
+                <p class="text-white font-weight-medium text-center">Copyright © 2022. Todos los derechos reservados <a href="#">Ignacio R. Davila</a></p>
               </div>
             </div>
           </div>

@@ -8,9 +8,24 @@ use Illuminate\Http\Request;
 use App\Http\Requests\Product\StoreRequest;
 use App\Http\Requests\Product\UpdateRequest;
 use App\Provider;
+use Barryvdh\DomPDF\Facade as PDF;
 
 class ProductController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('can:product.create')->only(['create','store']);
+        $this->middleware('can:product.index')->only(['index']);
+        $this->middleware('can:product.edit')->only(['edit','update']);
+        $this->middleware('can:product.show')->only(['show']);
+        $this->middleware('can:product.destroy')->only(['destroy']);
+
+        $this->middleware('can:change.status.products')->only(['change_status']);
+        
+
+    }
+
     public function index()
     {
         $products = Product::get();
@@ -97,10 +112,10 @@ class ProductController extends Controller
     }
 
     
-   /* public function print_barcode()
+    public function print_barcode()
     {
         $products = Product::get();
         $pdf = PDF::loadView('admin.product.barcode', compact('products'));
         return $pdf->download('codigos_de_barras.pdf');
-    }*/
+    }
 }

@@ -50,8 +50,8 @@ class UpdateRequest extends FormRequest
 
             'ruc_number.required'=>'Este campo es requerido.',
             'ruc_number.string'=>'El valor no es correcto.',
-            'ruc_number.max'=>'Solo se permiten 11 caracteres.',
-            'ruc_number.min'=>'Se requiere de 11 caracteres.',
+            'ruc_number.max'=>'Solo se permiten 14 caracteres.',
+            'ruc_number.min'=>'Se requiere de 14 caracteres.',
             'ruc_number.unique'=>'Ya se encuentra registrado.',
 
             'address.max'=>'Solo se permiten 255 caracteres.',
@@ -59,8 +59,8 @@ class UpdateRequest extends FormRequest
 
             'phone.required'=>'Este campo es requerido.',
             'phone.string'=>'El valor no es correcto.',
-            'phone.max'=>'Solo se permiten 9 caracteres.',
-            'phone.min'=>'Se requiere de 9 caracteres.',
+            'phone.max'=>'Solo se permiten 8 caracteres.',
+            'phone.min'=>'Se requiere de 8 caracteres.',
             'phone.unique'=>'Ya se encuentra registrado.',
         ];
     }

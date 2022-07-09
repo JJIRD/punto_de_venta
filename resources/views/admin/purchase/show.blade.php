@@ -53,9 +53,9 @@
                                 <thead>
                                     <tr>
                                         <th>Producto</th>
-                                        <th>Precio (C$)</th>
+                                        <th>Precio (PEN)</th>
                                         <th>Cantidad</th>
-                                        <th>SubTotal (C$)</th>
+                                        <th>SubTotal (PEN)</th>
                                     </tr>
                                 </thead>
                                 <tfoot>
@@ -64,7 +64,7 @@
                                             <p align="right">SUBTOTAL:</p>
                                         </th>
                                         <th>
-                                            <p align="right">C$ {{number_format($subtotal,2)}}</p>
+                                            <p align="right">s/{{number_format($subtotal,2)}}</p>
                                         </th>
                                     </tr>
                                     <tr>
@@ -72,7 +72,7 @@
                                             <p align="right">TOTAL IMPUESTO ({{$purchase->tax}}%):</p>
                                         </th>
                                         <th>
-                                            <p align="right">C$ {{number_format($subtotal*$purchase->tax/100,2)}}</p>
+                                            <p align="right">s/{{number_format($subtotal*$purchase->tax/100,2)}}</p>
                                         </th>
                                     </tr>
                                     <tr>
@@ -80,7 +80,7 @@
                                             <p align="right">TOTAL:</p>
                                         </th>
                                         <th>
-                                            <p align="right">C$ {{number_format($purchase->total,2)}}</p>
+                                            <p align="right">s/{{number_format($purchase->total,2)}}</p>
                                         </th>
                                     </tr>
                     
@@ -89,9 +89,9 @@
                                     @foreach($purchaseDetails as $purchaseDetail)
                                     <tr>
                                         <td>{{$purchaseDetail->product->name }}</td>
-                                        <td>C$ {{$purchaseDetail->price}}</td>
+                                        <td>s/{{$purchaseDetail->price}}</td>
                                         <td>{{$purchaseDetail->quantity}}</td>
-                                        <td>C$ {{number_format($purchaseDetail->quantity*$purchaseDetail->price,2)}}</td>
+                                        <td>s/{{number_format($purchaseDetail->quantity*$purchaseDetail->price,2)}}</td>
                                     </tr>
                                     @endforeach
                                 </tbody>

@@ -18,7 +18,8 @@
         "laravel/tinker": "^2.0",
         "laravel/ui": "2.4",
         "laravelcollective/html": "^6.3",
-        "mike42/escpos-php": "^2.2"
+        "mike42/escpos-php": "^2.2",
+        "milon/barcode": "^7.0"
     },
     "require-dev": {
         "facade/ignition": "^2.0",

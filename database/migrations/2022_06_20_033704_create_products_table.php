@@ -20,7 +20,7 @@ class CreateProductsTable extends Migration
             $table->integer('stock')->default(0);
             $table->string('image');
             $table->decimal('sell_price',12,2);
-            $table->enum('status', ['active', 'inactive'])->default('active');
+            $table->enum('status',['ACTIVE','DEACTIVATED'])->default('ACTIVE'); 
             $table->unsignedBigInteger('category_id');
             $table->foreign('category_id')->references('id')->on('categories');
             $table->unsignedBigInteger('provider_id');

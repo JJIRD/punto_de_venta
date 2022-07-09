@@ -10,7 +10,7 @@ use App\Http\Requests\Sale\StoreRequest;
 use App\Http\Requests\Sale\UpdateRequest;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
-use Barryvdh\DomPDF\Facade\Pdf;
+use Barryvdh\DomPDF\Facade as PDF;
 
 use Mike42\Escpos\PrintConnectors\FilePrintConnector;
 use Mike42\Escpos\Printer;
@@ -23,6 +23,13 @@ class SaleController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+        $this->middleware('can:sales.create')->only(['create','store']);
+        $this->middleware('can:sales.index')->only(['index']);
+        $this->middleware('can:sales.show')->only(['show']);
+
+        $this->middleware('can:change.status.sales')->only(['change_status']);
+        $this->middleware('can:sales.pdf')->only(['pdf']);
+        $this->middleware('can:sales.print')->only(['print']);
     }
 
     public function index()
@@ -79,7 +86,7 @@ class SaleController extends Controller
         foreach ($saleDetails as $saleDetail) {
             $subtotal += $saleDetail->quantity*$saleDetail->price-$saleDetail->quantity* $saleDetail->price*$saleDetail->discount/100;
         }
-        $pdf = Pdf::loadView('admin.sale.pdf', compact('sale', 'subtotal', 'saleDetails'));
+        $pdf = PDF::loadView('admin.sale.pdf', compact('sale', 'subtotal', 'saleDetails'));
         return $pdf->download('Reporte_de_venta_'.$sale->id.'.pdf');
     }
 
